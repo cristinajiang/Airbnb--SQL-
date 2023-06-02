@@ -20,6 +20,11 @@ CAST(REPLACE(Price,'$','') AS UNSIGNED) AS price_1,
 CAST(REPLACE(Price,'$','') AS UNSIGNED)*(30 - availability_30) AS proj_rev_month
 FROM listings111 ORDER BY proj_rev_month DESC LIMIT 15; 
 
+and I got the following data: 
+<img width="832" alt="Screenshot 2023-06-02 at 2 15 43 PM" src="https://github.com/cristinajiang/Airbnb--SQL-/assets/135065815/92cc56e3-daf6-4953-a873-0e17ab8128cf">
+
+as you can see, almost all 15 top earners are booked out except one that still had 4 days availability. So I clicked on its url and checked it out. 
+
 
        
        
