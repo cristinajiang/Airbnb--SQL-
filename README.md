@@ -25,7 +25,8 @@ and I got the following data:
 
 as you can see, almost all 15 top earners are booked out except one that still had 4 days availability. So I clicked on its url and checked it out. 
 
-
+The second question I was interested was: 
+# 2. 
        
        
   
