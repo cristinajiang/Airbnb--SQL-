@@ -35,7 +35,9 @@ SELECT host_id, host_url, host_name, COUNT(*) AS num_clean_reviews FROM review I
 WHERE comments LIKE "%clean%"
 GROUP BY host_id, host_url, host_name ORDER BY num_clean_reviews DESC;
 
-At the end, I was able to check out the link of the top five airbnb hosts that had the best reputation for maintaining "clean" rooms. 
+At the end, I was able to check out the link of the top five airbnb hosts that had the best reputation for maintaining "clean" rooms. Out of them, I picked "Daniel" as a host of my preference. 
+<img width="476" alt="Screenshot 2023-06-02 at 8 24 55 PM" src="https://github.com/cristinajiang/Airbnb--SQL-/assets/135065815/54a2cb0a-7818-4b16-bb4e-af1866a480c2">
+
 
 
        
