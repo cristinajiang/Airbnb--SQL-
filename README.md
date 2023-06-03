@@ -26,7 +26,17 @@ and I got the following data:
 as you can see, almost all 15 top earners are booked out except one that still had 4 days availability. So I clicked on its url and checked it out. 
 
 The second question I was interested was: 
-# 2. 
-       
+# 2. Which airbnb might have the cleanest room? 
+
+Cleaniness of the room is my top priority when travelling. Therefore, I wanted to check which airbnb host received the most review with the word "clean."
+
+# Code I used: 
+SELECT host_id, host_url, host_name, COUNT(*) AS num_clean_reviews FROM review INNER JOIN listings111 ON review.listing_id = listings111.id
+WHERE comments LIKE "%clean%"
+GROUP BY host_id, host_url, host_name ORDER BY num_clean_reviews DESC;
+
+At the end, I was able to check out the link of the top five airbnb hosts that had the best reputation for maintaining "clean" rooms. 
+
+
        
   
