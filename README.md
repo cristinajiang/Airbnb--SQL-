@@ -1,11 +1,11 @@
 # Airbnb--SQL-
 # Airbnb Analysis SQL Intro: 
-  When I was studying abroad in London, I wanted to travel to Amersterdan, Netherland because of the great food, great views, and it is the perfect biking place! (If you don't know already, I love biking!)
-  I went to airbnb website to look for a decent place to stay in Amersterdan. When I was scrolling through the page, an idea sparked. I wanted to use SQL to run some analysis to better understand the airbnb in Amersterdan. 
-  So I got a dataset that included 500 Amersterdan airbnb hosts information, including price, availability, reviews, url, location, etc. 
+  When I was studying abroad in London, I wanted to travel to Amsterdam, Netherlands because of the great food, great views, and it is the perfect biking place! (If you don't know already, I love biking!)
+  I went to airbnb website to look for a decent place to stay in Amsterdam. When I was scrolling through the page, an idea sparked. I wanted to use SQL to run some analysis to better understand the airbnb in Amsterdam. 
+  So I got a dataset that included 500 Amsterdam airbnb hosts information, including price, availability, reviews, url, location, etc. 
   
   In this project, I used SQL to analyze two questions I wanted to explore: 
-  # 1. What are the top 15 earners in Amersterdan Airbnb? 
+  # 1. What are the top 15 earners in Amsterdam Airbnb? 
        To answer this question, I need the total revenue for a particular month. However, there is no revenue column. So I decided to use the "price" column and multiply it by the "30-availability_30" as booked rooms
        and arrange them by descending order. 
        
