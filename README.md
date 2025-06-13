@@ -11,7 +11,7 @@
        
        Some adjustments I made before running analysis: 
        #1. cleaned up the price column by replacing the dollar sign into integer 
-       #2. created two new columns: one is "booked_out_30" and one is "proj_rev_month"
+       #2. created two new columns: one is "booked_out_room" and one is "proj_rev_month"
        
  # Code I used: 
  Use airbnb;
@@ -19,7 +19,7 @@ SELECT
   l.id, 
   l.listing_url, 
   l.name, 
-  (30 - l.availability_30) AS booked_out_30, 
+  (30 - l.availability_30) AS booked_out_room, 
   CONVERT(REPLACE(l.Price, '$', ''), UNSIGNED) AS price_1, 
   CONVERT(REPLACE(l.Price, '$', ''), UNSIGNED) * (30 - l.availability_30) AS proj_rev_month
 FROM listings111 AS l
