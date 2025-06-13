@@ -29,7 +29,7 @@ LIMIT 15;
 I got the following data: 
 <img width="832" alt="Screenshot 2023-06-02 at 2 15 43 PM" src="https://github.com/cristinajiang/Airbnb--SQL-/assets/135065815/92cc56e3-daf6-4953-a873-0e17ab8128cf">
 
-as you can see, almost all 15 top earners are booked out, so I need to expand my LIMIT filter to see more options. 
+as you can see, almost all 15 top earners are booked out, except there is one host with 4 days availabile, so I clicked into the URL 
 
 The second question I was interested was: 
 # 2. Which airbnb might have the cleanest room? 
