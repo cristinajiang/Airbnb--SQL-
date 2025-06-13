@@ -15,12 +15,18 @@
        
  # Code I used: 
  Use airbnb;
-SELECT id, listing_url, name, 30 - availability_30 AS booked_out_30 , 
-CAST(REPLACE(Price,'$','') AS UNSIGNED) AS price_1, 
-CAST(REPLACE(Price,'$','') AS UNSIGNED)*(30 - availability_30) AS proj_rev_month
-FROM listings111 ORDER BY proj_rev_month DESC LIMIT 15; 
+SELECT 
+  l.id, 
+  l.listing_url, 
+  l.name, 
+  (30 - l.availability_30) AS booked_out_30, 
+  CONVERT(REPLACE(l.Price, '$', ''), UNSIGNED) AS price_1, 
+  CONVERT(REPLACE(l.Price, '$', ''), UNSIGNED) * (30 - l.availability_30) AS proj_rev_month
+FROM listings111 AS l
+ORDER BY proj_rev_month DESC
+LIMIT 15;
 
-and I got the following data: 
+I got the following data: 
 <img width="832" alt="Screenshot 2023-06-02 at 2 15 43 PM" src="https://github.com/cristinajiang/Airbnb--SQL-/assets/135065815/92cc56e3-daf6-4953-a873-0e17ab8128cf">
 
 as you can see, almost all 15 top earners are booked out except one that still had 4 days availability. So I clicked on its url and checked it out. 
@@ -31,9 +37,16 @@ The second question I was interested was:
 Cleaniness of the room is my top priority when travelling. Therefore, I wanted to check which airbnb host received the most review with the word "clean."
 
 # Code I used: 
-SELECT host_id, host_url, host_name, COUNT(*) AS num_clean_reviews FROM review INNER JOIN listings111 ON review.listing_id = listings111.id
-WHERE comments LIKE "%clean%"
-GROUP BY host_id, host_url, host_name ORDER BY num_clean_reviews DESC;
+SELECT 
+  l.host_id, 
+  l.host_url, 
+  l.host_name, 
+  COUNT(r.review_id) AS num_clean_reviews
+FROM listings111 l
+JOIN review r ON r.listing_id = l.id
+WHERE r.comments LIKE '%clean%'
+GROUP BY l.host_id, l.host_url, l.host_name
+ORDER BY num_clean_reviews DESC;
 
 At the end, I was able to check out the link of the top five airbnb hosts that had the best reputation for maintaining "clean" rooms. Out of them, I picked "Daniel" as a host of my preference. 
 <img width="476" alt="Screenshot 2023-06-02 at 8 24 55 PM" src="https://github.com/cristinajiang/Airbnb--SQL-/assets/135065815/54a2cb0a-7818-4b16-bb4e-af1866a480c2">
